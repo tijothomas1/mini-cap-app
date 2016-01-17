@@ -1,0 +1,13 @@
+<div>
+
+<h1>Framework products</h1>
+
+<% @products.each do |product| %>
+  <h3><a href="/products/<%= product.id %>"> <%= product.name %> </a></h3>
+  <h3><%= product.price %></h3>
+  <h3><img src="<%= product.image %>"></h3>
+  <h3><%= product.description %></h3>
+  <h5><a data-confirm="Are You Sure" data-method="delete" href="/products/<%= recipe.id%>" rel="nofollow">Delete</a></h5>
+<% end %>
+<hr>
+</div>
