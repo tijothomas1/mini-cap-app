@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
 
-  def item_display
-    @products = Product.all
-  end
+  # def item_display
+  #   @products = Product.all
+  # end
 
   def index
     @products = Product.all
@@ -10,6 +10,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(id: params[:id])
+
+    @price_list = @price.price_list
+    
   end
 
   def new
@@ -18,6 +21,10 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create({name: params[:name], price: params[:price], image: params[:image], description: params[:description] })
+
+    flash[:success] = "A new product has been created."
+
+    redirect_to "/"
   end
 
   def edit
@@ -29,11 +36,18 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
 
     @product.update({name: params[:name], price: params[:price], image: params[:image], description: params[:description] })
+
+    flash[:success] = "The Product has been updated!!"
+
+    redirect_to "/products/#{@product.id}"
   end
 
   def destroy
     @product = Product.find_by(id: params[:id])
     @product.destroy
+
+    flash[:success] = "The product was destroyed with a lot of malice."
+    flash[:warning] = "The product has been destroyed."
   end
 
 end

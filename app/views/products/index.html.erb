@@ -1,13 +1,27 @@
-<div>
-
 <h1>Framework products</h1>
 
-<% @products.each do |product| %>
-  <h3><a href="/products/<%= product.id %>"> <%= product.name %> </a></h3>
-  <h3><%= product.price %></h3>
-  <h3><img src="<%= product.image %>"></h3>
-  <h3><%= product.description %></h3>
-  <h5><a data-confirm="Are You Sure" data-method="delete" href="/products/<%= recipe.id%>" rel="nofollow">Delete</a></h5>
-<% end %>
-<hr>
-</div>
+
+<div class= "row">
+  <% @products.each do |product| %>
+    <div class="col-md-offset-1 col-md-3 col-sm-6 list-view">
+      <div class="thumbnail">
+        <div class="caption"
+          <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
+          <p><%= product.price %></p>
+          <p><%= product.despcription %></p>
+        </div>   
+        <%= image_tag product.image, class: "img-responsive" %>  
+      </div>
+    </div>
+  <% end %>
+</div>  
+          <!-- <h3><a href="/products/<%= product.id %>"> <%= product.name %> </a></h3>
+          <p><%= product.price %></p>
+          <p><img src="<%= product.image %>"></p>
+          <p><%= product.description %></p>
+          <h5><a data-confirm="Are You Sure" data-method="delete" href="/products/<%= product.id%>" rel="nofollow">Delete</a></h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div> -->
