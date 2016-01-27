@@ -1,5 +1,8 @@
 class Product < ActiveRecord::Base
 
+  belongs_to :supplier #this must be singular
+  has_many :images
+
   def sale_message
 
     if price.to_i < 2

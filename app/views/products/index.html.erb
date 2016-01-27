@@ -8,20 +8,10 @@
         <div class="caption"
           <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
           <p><%= product.price %></p>
-          <p><%= product.despcription %></p>
-        </div>   
-        <%= image_tag product.image, class: "img-responsive" %>  
+          <p><%= product.description %></p>
+        </div>    
       </div>
     </div>
   <% end %>
 </div>  
-          <!-- <h3><a href="/products/<%= product.id %>"> <%= product.name %> </a></h3>
-          <p><%= product.price %></p>
-          <p><img src="<%= product.image %>"></p>
-          <p><%= product.description %></p>
-          <h5><a data-confirm="Are You Sure" data-method="delete" href="/products/<%= product.id%>" rel="nofollow">Delete</a></h5>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div> -->
+          
