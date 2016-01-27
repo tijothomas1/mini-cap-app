@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get '/' => 'products#index'
-  get '/products' => 'products#index'
+
+  devise_for :users
+  
+  root 'products#index'
+  # get '/' => 'products#index'
+  # get '/products' => 'products#index'
 
   get '/products/new' => 'products#new' # look at 'photos' example in rails guide Josh sent out on Jan 17th.
   post '/products' => 'products#create'
