@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :supplier #this must be singular
   has_many :images
+  has_many :orders
 
   def sale_message
 

@@ -7,11 +7,11 @@
       <div class="thumbnail">
         <div class="caption"
           <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
+          <img src=<%= product.images.first%>/>
           <p><%= product.price %></p>
           <p><%= product.description %></p>
         </div>    
       </div>
     </div>
   <% end %>
-</div>  
-          
+</div>
