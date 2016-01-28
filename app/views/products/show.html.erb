@@ -2,11 +2,6 @@
 <h2>Price: $<%= @product.price %></h2>
  <!-- This is the portion I need to look at-->
 
-
-
-
-
-
 <div class="row">
   <div class="col-sm-9"
     
@@ -14,12 +9,15 @@
   </div>
 </div>
 
-
-
-
-
 <h2><%= @product.name %></h2>
 <h2><%= @product.price %></h2>
 <h2><%= @product.supplier.name %></h2>
 <h2><img src="<%= @product.images.first.image_url %>"></h2>
 <h2><%= @product.description %></h2>
+<div>
+  <%= form_tag '/orders', method: :post do %>
+      <%= label_tag :quantity %>
+      <%= text_field_tag :quantity %>
+      <%= submit_tag "Punch it....." %>
+  <% end %>
+</div>
