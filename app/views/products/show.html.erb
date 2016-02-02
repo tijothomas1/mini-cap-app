@@ -16,8 +16,12 @@
 <h2><%= @product.description %></h2>
 <div>
   <%= form_tag '/orders', method: :post do %>
+    <div class="form-group"> <!-- This is purely for bootstrap -->
       <%= label_tag :quantity %>
       <%= text_field_tag :quantity %>
+      <%= label_tag :product_id, "Grab the product id from the url" %>
+      <%= text_field_tag :product_id, @product.id %> <!-- After comma autofills product id in field -->
+    </div>
       <%= submit_tag "Punch it....." %>
   <% end %>
 </div>
