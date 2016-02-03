@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   belongs_to :supplier #this must be singular
   has_many :images
   has_many :orders
+  has_many :categorized_products
   has_many :user, through: :carted_product
 
   def sale_message

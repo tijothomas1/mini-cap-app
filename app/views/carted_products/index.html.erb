@@ -1,0 +1,13 @@
+<h2>Carted Products</h2>
+
+<% @carted_products.each do |carted_product| %>
+  <p>Status: <%= carted_product.status %></p>
+  <p>Product Name: <%= carted_product.product.name %></p>
+  <p>Product Price: <%= carted_product.product.price %></p>
+  <p>Product Quanity: <%= carted_product.quantity %></p>
+
+  <% end %>
+
+  <a href='/' rel="nofollow" role="button"> Keep Shopping</a>
+
+  <a href='/orders' data-confirm="Are you sure?" data-method= "post" role="button" class="btn btn-default btn-sm active">Buy Now!</a>

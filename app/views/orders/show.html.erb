@@ -4,9 +4,17 @@
 
 
 <h2> ID: <%= @order.id %></h2>
-<h2> Quantity: <%= @order.quantity %></h2>
+
+<% @order.carted_products.each do |carted_product| %>
+  <p>Name: <%= carted_product.product.name  %></p>
+  <p>Quantity: <%= carted_product.quantity  %></p>
+
+
+
+  <% end %>
+
+
 <h3> Subtotal: <%= @order.subtotal %></h3>
 <h3> Tax: <%= number_to_currency(@order.tax) %></h3>
 <h3> Total: <%= @order.total %></h3>
 
-<%= image_tag @order.product.images.first.image_url %>
