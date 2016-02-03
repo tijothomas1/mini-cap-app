@@ -1,8 +1,6 @@
 class OrdersController < ApplicationController
 
   def create
-
-
     @carted_products = CartedProduct.where("status LIKE ?", "carted")
 
     @subtotal = 0
@@ -21,6 +19,7 @@ class OrdersController < ApplicationController
    
 
     @carted_products.each do |carted_product|
+      # carted_product.update(order_id: order.id, status: "Purchased") similar to lines 23 and 24
       carted_product.order_id = @order.id 
       carted_product.status = "Purchased"
 

@@ -4,7 +4,7 @@
   <p>Status: <%= carted_product.status %></p>
   <p>Product Name: <%= carted_product.product.name %></p>
   <p>Product Price: <%= carted_product.product.price %></p>
-  <p>Product Quanity: <%= carted_product.quantity %></p>
+  <p>Product Quantity: <%= carted_product.quantity %> <%= link_to "Remove Item", "/carted_products/#{carted_product.id}", method: :delete</p>
 
   <% end %>
 
