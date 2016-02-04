@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # end
 
   def index
+    @cart_couunt = current_user.carted_products.where(status: "Carted").count
     @products = Product.all
   end
 
